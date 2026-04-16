@@ -1,7 +1,7 @@
 <p align="center">
   <img src="https://nestjs.com/img/logo-small.svg" width="100" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" width="100"/>
-  <img src="https://seeklogo.com/images/I/insomnia-logo-649A7E4E0E-seeklogo.com.png" width="100"/>
+  <img src="https://raw.githubusercontent.com/Kong/insomnia/develop/packages/insomnia-ui/assets/icon.png" width="100"/>
 </p>
 
 <h1 align="center">💊 Projeto Farmácia - NestJS</h1>
@@ -9,55 +9,115 @@
 ---
 
 ## 📌 Descrição
-API desenvolvida com **NestJS** para gerenciamento de categorias de um e-commerce de farmácia.
+
+API desenvolvida com NestJS para gerenciamento de categorias de um sistema de e-commerce de farmácia.
 
 ---
 
 ## 🚀 Funcionalidades
-- ✔ CRUD completo de Categoria
-- ✔ Busca por descrição (ILike)
-- ✔ Integração com banco de dados
+
+- CRUD completo de Categoria (Create, Read, Update, Delete)
+- Busca por ID
+- Busca por descrição (ILIKE)
+- Integração com banco de dados MySQL
+- Validação com DTO (class-validator)
+- Tratamento de erros com NotFoundException
+- Uso de variáveis de ambiente (.env)
 
 ---
 
-## 🔗 Endpoints
+## 🔗 Endpoints da API
 
-📍 Listar todas as categorias
+### 📍 Listar todas as categorias
 
 GET /categorias
 
-📍 Buscar por ID
+
+---
+
+### 📍 Buscar categoria por ID
 
 GET /categorias/:id
 
-📍 Buscar por descrição
+
+---
+
+### 📍 Buscar por descrição
 
 GET /categorias/descricao/:descricao
 
-📍 Criar categoria
+
+---
+
+### 📍 Criar categoria
 
 POST /categorias
 
-Exemplo:
+
+Exemplo de requisição:
+```json
 {
   "descricao": "Medicamentos"
 }
+
 📍 Atualizar categoria
 
-PUT /categorias
+PUT /categorias/:id
+
+Exemplo de requisição:
+
+{
+  "descricao": "Higiene"
+}
 
 📍 Deletar categoria
 
 DELETE /categorias/:id
 
-🛠 Tecnologias Utilizadas
+
+🛠 Tecnologias utilizadas
+
 NestJS
+TypeORM
 MySQL
 Insomnia
-TypeORM
-🧪 Testes
+Class Validator
+Node.js
 
-Testes realizados utilizando o Insomnia para validação dos endpoints.
+
+⚙️ Como executar o projeto
+
+1. Instalar dependências
+npm install
+2. Rodar o projeto
+npm run start:dev
+🔐 Configuração do ambiente (.env)
+
+Crie um arquivo .env na raiz do projeto:
+
+DB_HOST=localhost
+DB_PORT=3306
+DB_USER=root
+DB_PASSWORD=****** 
+DB_NAME=farmacia
+
+
+🧪 Testes da API
+
+Os testes foram realizados utilizando o Insomnia, validando todos os endpoints:
+
+GET
+POST
+PUT
+DELETE
+
+📦 Estrutura do Projeto
+
+Controller: gerenciamento das rotas
+Service: regras de negócio
+DTO: validação de dados
+Entity: estrutura da tabela no banco
+
 
 👩‍💻 Desenvolvedora
 
