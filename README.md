@@ -1,68 +1,64 @@
 <p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
+  <img src="https://nestjs.com/img/logo-small.svg" width="100" alt="NestJS Logo" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" width="100" alt="MySQL Logo"/>
+  <img src="https://raw.githubusercontent.com/Kong/insomnia/develop/packages/insomnia-app/app/assets/images/insomnia-logo.svg" width="100" alt="Insomnia Logo"/>
 </p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+<h1 align="center">💊 Projeto Farmácia - NestJS</h1>
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
-
-## Description
-
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
-## Project Farmácia - NestJS
-
+---
 
 ## 📌 Descrição
-API desenvolvida com NestJS para gerenciamento de categorias de um e-commerce de farmácia.
+API desenvolvida com **NestJS** para gerenciamento de categorias de um e-commerce de farmácia.
+
+---
 
 ## 🚀 Funcionalidades
 - ✔ CRUD completo de Categoria
-- ✔ Busca por descrição (LIKE com ILike)
+- ✔ Busca por descrição (ILike)
+- ✔ Integração com banco de dados
+
+---
 
 ## 🔗 Endpoints
 
-### 📍 Listar todas as categorias
+📍 Listar todas as categorias
+
 GET /categorias
 
-### 📍 Buscar por ID
+📍 Buscar por ID
+
 GET /categorias/:id
 
-### 📍 Buscar por descrição
+📍 Buscar por descrição
+
 GET /categorias/descricao/:descricao
 
-### 📍 Criar categoria
+📍 Criar categoria
+
 POST /categorias
 
-### 📍 Atualizar categoria
+Exemplo:
+{
+  "descricao": "Medicamentos"
+}
+📍 Atualizar categoria
+
 PUT /categorias
 
-### 📍 Deletar categoria
+📍 Deletar categoria
+
 DELETE /categorias/:id
 
-## 🛠 Tecnologias
-- NestJS
-- TypeORM
-- MySQL
-- Insomnia
+🛠 Tecnologias Utilizadas
+NestJS
+MySQL
+Insomnia
+TypeORM
+🧪 Testes
 
-## 🧪 Testes
-Testes realizados com Insomnia
+Testes realizados utilizando o Insomnia para validação dos endpoints.
 
-## 👩‍💻 Desenvolvedora
+👩‍💻 Desenvolvedora
+
 Taís Duarte
