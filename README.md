@@ -1,7 +1,7 @@
 <p align="center">
-  <img src="https://nestjs.com/img/logo-small.svg" width="100" alt="NestJS Logo" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" width="100" alt="MySQL Logo"/>
-  <img src="https://raw.githubusercontent.com/Kong/insomnia/develop/packages/insomnia-app/app/assets/images/insomnia-logo.svg" width="100" alt="Insomnia Logo"/>
+  <img src="https://nestjs.com/img/logo-small.svg" width="100" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" width="100"/>
+  <img src="https://seeklogo.com/images/I/insomnia-logo-649A7E4E0E-seeklogo.com.png" width="100"/>
 </p>
 
 <h1 align="center">💊 Projeto Farmácia - NestJS</h1>
