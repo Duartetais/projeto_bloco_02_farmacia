@@ -3,6 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { DeleteResult, ILike, Repository } from 'typeorm';
 import { Categoria } from './entities/categoria.entity';
 
+
 @Injectable()
 export class CategoriaService {
   constructor(
@@ -11,32 +12,41 @@ export class CategoriaService {
   ) {}
 
   async findAll(): Promise<Categoria[]> {
-    return await this.categoriaRepository.find();
+  return this.categoriaRepository.find();
+}
+
+async findById(id: number): Promise<Categoria> {
+  const categoria = await this.categoriaRepository.findOne({
+    where: { id }
+  });
+
+  if (!categoria) {
+    throw new Error("Categoria não encontrada");
   }
 
-  async findById(id: number): Promise<Categoria> {
-    const categoria = await this.categoriaRepository.findOne({ where: { id } });
-    if (!categoria) throw new HttpException('Categoria não encontrada!', HttpStatus.NOT_FOUND);
-    return categoria;
-  }
+  return categoria;
+}
 
-  async findByDescricao(descricao: string): Promise<Categoria[]> {
-    return await this.categoriaRepository.find({
-      where: { descricao: ILike(`%${descricao}%`) },
-    });
-  }
+async findByDescricao(descricao: string): Promise<Categoria[]> {
+  return this.categoriaRepository.find({
+    where: {
+      descricao: ILike(`%${descricao}%`)
+    }
+  });
+}
 
-  async create(categoria: Categoria): Promise<Categoria> {
-    return await this.categoriaRepository.save(categoria);
-  }
+async create(categoria: Categoria): Promise<Categoria> {
+  return this.categoriaRepository.save(categoria);
+}
 
-  async update(categoria: Categoria): Promise<Categoria> {
-    await this.findById(categoria.id);
-    return await this.categoriaRepository.save(categoria);
-  }
+async update(categoria: Categoria): Promise<Categoria> {
+  return this.categoriaRepository.save(categoria);
+}
 
-  async delete(id: number): Promise<DeleteResult> {
-    await this.findById(id);
-    return await this.categoriaRepository.delete(id);
-  }
+async delete(id: number) {
+  await this.categoriaRepository.delete(id);
+  return {
+    message: "Categoria deletada com sucesso"
+  };
+}
 }

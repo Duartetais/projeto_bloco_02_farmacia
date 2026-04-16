@@ -12,6 +12,7 @@ import { Categoria } from './categoria/entities/categoria.entity';
       username: 'root', 
       password: 'K@m1l@12', 
       database: 'farmacia', 
+       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true, 
     }),
     CategoriaModule,
