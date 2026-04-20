@@ -10,7 +10,7 @@
 </p>
 
 > 🎓 **Projeto de Conclusão - Bloco 02** | Bootcamp Java Full Stack [Generation Brasil](https://brazil.generation.org/)  
-> *Desenvolvido durante minha transição de carreira da Segurança do Trabalho para o Desenvolvimento de Software.*
+> *Desenvolvido durante o Bootcamp*
 
 ---
 
