@@ -46,15 +46,18 @@ Destaques Técnicos:
 
     ✅ Injeção de Dependência: Uso extensivo do motor do NestJS para desacoplamento.
 
-⚡ Funcionalidades
-💊 Categoria
-Método	Endpoint	Descrição
-GET	/categorias	Lista todas as categorias
-GET	/categorias/:id	Busca categoria por ID
-GET	/categorias/descricao/:descricao	Busca por termo (LIKE)
-POST	/categorias	Cadastra nova categoria (com validação DTO)
-PUT	/categorias	Atualiza categoria existente
-DELETE	/categorias/:id	Remove categoria
+## ⚡ Funcionalidades
+
+### 💊 Módulo de Categorias
+
+| Método | Endpoint | Descrição |
+| :--- | :--- | :--- |
+| `GET` | `/categorias` | Lista todas as categorias |
+| `GET` | `/categorias/:id` | Busca categoria por ID |
+| `GET` | `/categorias/descricao/:descricao` | Busca por termo (LIKE) |
+| `POST` | `/categorias` | Cadastra nova categoria (com validação DTO) |
+| `PUT` | `/categorias` | Atualiza categoria existente |
+| `DELETE` | `/categorias/:id` | Remove categoria |
 
 🚀 Como Executar
 
