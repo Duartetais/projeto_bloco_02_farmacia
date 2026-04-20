@@ -1,53 +1,96 @@
+![NestJS](https://img.shields.io/badge/nestjs-E0234E?style=for-the-badge&logo=nestjs&logoColor=white)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white)
+
+# 💊 Farmácia API - NestJS Backend
+
 <p align="center">
-  <img src="https://nestjs.com/img/logo-small.svg" width="100" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" width="100"/>
-  <img src="https://raw.githubusercontent.com/Kong/insomnia/develop/packages/insomnia-ui/assets/icon.png" width="100"/>
+  <img src="https://img.shields.io/badge/NestJS-E0234E?style=for-the-badge&logo=nestjs&logoColor=white" alt="NestJS" />
+  <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/TypeORM-FE0902?style=for-the-badge&logo=typeorm&logoColor=white" alt="TypeORM" />
+  <img src="https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL" />
+  <img src="https://img.shields.io/badge/GitHub%20Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white" alt="GitHub Actions" />
 </p>
 
-# 💊 Farmácia - Projeto Final Bloco 02
+> 🎓 **Projeto de Conclusão - Bloco 02** | Bootcamp Java Full Stack [Generation Brasil](https://brazil.generation.org/)  
+> *Desenvolvido durante minha transição de carreira da Segurança do Trabalho para o Desenvolvimento de Software.*
 
-Repositório destinado ao desenvolvimento de um sistema de Comércio Eletrônico para uma Farmácia, utilizando o framework **NestJS**. Este projeto faz parte do processo avaliativo da Generation Brasil.
+---
 
-## 🚀 Tecnologias e Ferramentas
-* **Ambiente:** Fedora Linux 🐧
-* **Linguagem:** TypeScript
-* **Framework:** NestJS
-* **ORM:** TypeORM
-* **Banco de Dados:** MySQL
-* **Ferramentas:** VS Code, Insomnia, MySQL Workbench
-* **CI/CD:** GitHub Actions (Build Automation)
+## 📋 Sobre o Projeto
 
-## 🛠️ Funcionalidades: Recurso Categoria
-O projeto implementa o CRUD completo para a entidade **Categoria**, atendendo aos 6 métodos obrigatórios:
+API RESTful completa para gestão de e-commerce farmacêutico. Este projeto representa um salto técnico em relação aos anteriores, focando em **arquitetura enterprise**, validações robustas e automação.
 
-1.  **Listar todas as categorias:** `GET /categorias`
-2.  **Consultar por ID:** `GET /categorias/:id`
-3.  **Consultar por Descrição:** `GET /categorias/descricao/:descricao` (Busca com operador LIKE)
-4.  **Cadastrar nova categoria:** `POST /categorias` (Com validações via DTO)
-5.  **Atualizar categoria existente:** `PUT /categorias`
-6.  **Deletar categoria:** `DELETE /categorias/:id`
+**Evolução do aprendizado:** ➡️ Do projeto [Loja-de-Game](https://github.com/Duartetais/Loja-de-Game) para esta solução que implementa **DTOs, ValidationPipe, GitHub Actions e Git Flow profissional**.
 
-## ⚙️ Diferenciais do Projeto
-* **ValidationPipe:** Configurado globalmente para garantir que as requisições sigam as regras de negócio.
-* **DTO (Data Transfer Object):** Implementado para segurança e validação dos dados de entrada.
-* **Configuração em Linux:** Ambiente de desenvolvimento totalmente configurado e otimizado no Fedora.
+---
 
-## 📦 Como executar a aplicação
-1. Clone este repositório:
-   ```bash
-   git clone [https://github.com/Duartetais/projeto_bloco_02_farmacia.git](https://github.com/Duartetais/projeto_bloco_02_farmacia.git)
-2. Instale as dependências:   cd projeto_bloco_02_farmacia
-   npm install
-3. Configure as credenciais do seu MySQL no arquivo src/app.module.ts.
-4. Inicie o servidor:
-      npm run start:dev
+## 🏗️ Arquitetura & Padrões
 
-## 🏁 Como subir alterações (Git Flow)
+O projeto segue uma estrutura modular para facilitar a manutenção e escalabilidade:
 
-Para atualizar o repositório após edições:
-Bash
+```text
+src/
+├── categoria/
+│   ├── dto/                # Data Transfer Objects (Validação de entrada)
+│   ├── entities/           # Modelos TypeORM (Mapeamento do Banco)
+│   ├── categoria.controller.ts
+│   ├── categoria.service.ts
+│   └── categoria.module.ts
+├── produto/                # Estrutura similar à categoria
+└── main.ts                 # Configuração do ValidationPipe Global
+```
 
-git add .
-git commit -m "docs: melhorando documentação do README"
-git push origin 02_CRUD_Categoria_novo
-  
+Destaques Técnicos:
+
+    ✅ DTO Pattern: Separação clara entre a entrada de dados e a persistência.
+
+    ✅ ValidationPipe: Validação automática com class-validator.
+
+    ✅ Injeção de Dependência: Uso extensivo do motor do NestJS para desacoplamento.
+
+⚡ Funcionalidades
+💊 Categoria
+Método	Endpoint	Descrição
+GET	/categorias	Lista todas as categorias
+GET	/categorias/:id	Busca categoria por ID
+GET	/categorias/descricao/:descricao	Busca por termo (LIKE)
+POST	/categorias	Cadastra nova categoria (com validação DTO)
+PUT	/categorias	Atualiza categoria existente
+DELETE	/categorias/:id	Remove categoria
+
+🚀 Como Executar
+
+    Clone o repositório:
+    Bash
+
+    git clone [https://github.com/Duartetais/projeto_bloco_02_farmacia.git](https://github.com/Duartetais/projeto_bloco_02_farmacia.git)
+
+    Instale as dependências:
+    Bash
+
+    npm install
+
+    Configure o banco de dados:
+    Edite o arquivo src/app.module.ts ou configure seu arquivo .env com as credenciais do MySQL.
+
+    Rode a aplicação:
+    Bash
+
+    npm run start:dev
+    ```
+🔄 Git Flow Utilizado
+
+Neste projeto, apliquei o fluxo de trabalho profissional:
+
+    Criação de feature/branches.
+
+    Commits Semânticos (feat:, fix:, docs:).
+
+    Abertura de Pull Requests para revisão antes do merge na branch principal.
+
+## 🔗 **Conecte-se Comigo**
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/Duartetais)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Duartetais)
