@@ -1,14 +1,18 @@
 import { Column, Entity, PrimaryGeneratedColumn, OneToMany } from "typeorm";
 import { IsNotEmpty } from "class-validator";
+import { Produto } from "../../produto/entities/produto.entity";
 
 @Entity({ name: "tb_categorias" })
 export class Categoria {
 
   @PrimaryGeneratedColumn()
-  id!: number;
+ id!: number;
 
   @IsNotEmpty()
   @Column({ length: 255, nullable: false })
   descricao!: string;
 
+  @OneToMany(() => Produto, (produto) => produto.categoria)
+    produto!: Produto[];
 }
+
